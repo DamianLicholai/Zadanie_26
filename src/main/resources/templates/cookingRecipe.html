@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Książka kucharska</title>
+</head>
+<body>
+
+
+<a href="/">Wróć na stronę główną</a> <br><br>
+
+<h2 th:text="${cookingRecipe.name}"></h2>
+
+<b>Kategoria przepisu: </b>
+<span th:text="${cookingRecipe.category}"></span> <br>
+
+<b>Opis:</b>
+<span th:text="${cookingRecipe.description}"></span> <br>
+
+<b>ilość polubień:</b>
+<span th:text="${cookingRecipe.likeNumber}"></span><br><br>
+
+
+<a th:href="|/cookingRecipe/${cookingRecipe.id}/edit|">Edytuj</a> <br>
+<a th:href="|/cookingRecipe/${cookingRecipe.id}/likeIt|">Lubię to!</a> <br>
+<a th:href="|/cookingRecipe/${cookingRecipe.id}/delete|">Usuń przepis!</a>
+
+</body>
+</html>
