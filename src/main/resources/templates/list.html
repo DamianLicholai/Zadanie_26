@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Książka kucharska</title>
+</head>
+<body>
+
+<h1>Lista wszystkich przepisów</h1>
+
+<a href="/">Powrót na stronę główną</a> <span>      </span>
+
+<a href="/list">Wyświell wszytskie</a> <span>      </span>
+<a href="/list?kategoria=MIESNE">Wyświell tylko dania mięsne</a> <span>      </span>
+<a href="/list?kategoria=WEGETARIANSKIE">Wyświetl tylko dania wegetariańskie</a> <span>      </span>
+<a href="/list?kategoria=WEGANSKIE">Wyświetl tylko dania wegańskie</a>
+
+<ul class="list-group">
+    <li class="list-group-item" th:each="cookingRecipe: ${cookingRecipes}">
+        <a th:href="|/cookingRecipes/${cookingRecipe.id}|" th:text="|${cookingRecipe.name}|"></a>
+    </li>
+</ul>
+
+
+</body>
+</html>

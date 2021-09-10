@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Książka kucharska</title>
+</head>
+<body>
+
+<h1>Książka kucharska</h1>
+
+<a href="/">powrót na stronę główną</a> <br><br>
+
+<ul class="list-group">
+    <li class="list-group-item" th:each="cookingRecipe: ${cookingRecipes}">
+        <a th:href="|/cookingRecipes/${cookingRecipe.id}|" th:text="|${cookingRecipe.name}|"></a>
+    </li>
+</ul>
+
+
+</body>
+</html>
